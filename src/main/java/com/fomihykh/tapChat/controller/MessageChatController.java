@@ -12,7 +12,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/message")
 public class MessageChatController {
-
     @Autowired
     private MessageChatService messageChatService;
 
