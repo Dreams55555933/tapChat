@@ -12,6 +12,7 @@ public class MessageChat {
     private long id;
 
     private long userId;
+    private String userName;
     private String messageChat;
 
     public long getId() {
@@ -28,6 +29,14 @@ public class MessageChat {
 
     public void setUserId(long userId) {
         this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getMessageChat() {

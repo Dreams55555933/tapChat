@@ -26,6 +26,7 @@ public class MessageChatService {
         if (messageChat!=null){
             messageChat.setMessageChat(messageChatDetail.getMessageChat());
             messageChat.setUserId(messageChatDetail.getUserId());
+            messageChat.setUserName(messageChatDetail.getUserName());
             return messageChatRepository.save(messageChat);
         }
         return null;
