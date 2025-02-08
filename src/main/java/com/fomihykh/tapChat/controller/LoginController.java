@@ -20,20 +20,16 @@ public class LoginController {
     UserService userService;
 
     @PostMapping
-    public LoginChat login(@RequestBody LoginChat loginChat){
+    public Boolean login(@RequestBody LoginChat loginChat){
 
         List <UserChat> users = userService.getAllUser();
         for (UserChat user:users){
             if (user.getPhone()==loginChat.getPhone()){
-                if (Objects.equals(user.getPassword(), loginChat.getPassword())){
-                    loginChat.setIsLogin(true);
-                    loginChat.setName(user.getName());
-                    return loginChat;
-                }
+                if (Objects.equals(user.getPassword(), loginChat.getPassword())) return true;
             }
         }
-        loginChat.clear();
-        return loginChat;
+        return false;
+
     }
 }
 
